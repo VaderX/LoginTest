@@ -1,24 +1,29 @@
-import logo from './logo.svg';
+import { Col, Container, Row } from 'reactstrap';
+import './../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import './../node_modules/@fortawesome/fontawesome-free/css/all.css';
+import LOGO from './Assets/logo.png';
 import './App.css';
+
+import Navigation from './Components/Navigation/Navigation';
+import Search from './Components/Search/Search';
+import Footer from './Components/Footer/Footer';
+import React from 'react';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Fragment>
+      <Navigation/>
+      <Container fluid className="Header">
+        <Row>
+          <Col md="8" tag="h5" className="m-auto">A Fast Subdomain Enumeration Tool With IP Resolving & HTTP Status Code Presented By</Col>
+          <Col md="4">
+            <img src={LOGO} alt="logo"/>
+          </Col>
+        </Row>
+      </Container>
+      <Search/>      
+      <Footer/>
+    </React.Fragment>
   );
 }
 
